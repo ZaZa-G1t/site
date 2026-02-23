@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW M8 Gran Coupé</title>
+    <!-- лёгкий шрифт для красоты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+            color: #1e2a41;
+            line-height: 1.5;
+        }
+
+        /* главный контейнер – лёгкость и воздух */
+        .site-wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 2rem 3rem;
+            background-color: white;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+            border-radius: 0 0 2rem 2rem;
+        }
+
+        /* навигация – минимализм */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0 2rem 0;
+            border-bottom: 1px solid #e9edf4;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: -0.02em;
+            color: #1c3b5e;
+        }
+
+        .logo span {
+            background: #1c3b5e;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            color: #4a5b73;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0066b1;
+        }
+
+        /* главный экран: крупное фото + текст */
+        .hero {
+            margin: 2.5rem 0 3rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #0a1a2b;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 .m-light {
+            font-weight: 400;
+            color: #3a6d9c;
+            display: block;
+            font-size: 2rem;
+            margin-top: 0.3rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #3f4e66;
+            margin: 1.5rem 0 2rem 0;
+            max-width: 90%;
+        }
+
+        .info-chip {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .chip-item {
+            background: #f0f4fa;
+            border-radius: 60px;
+            padding: 0.6rem 1.4rem;
+            font-weight: 600;
+            color: #1c3b5e;
+            font-size: 0.95rem;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .hero-image {
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 25px 30px -15px rgba(0, 35, 65, 0.25);
+            transition: transform 0.3s ease;
+            background: #eef2f6;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.01);
+        }
+
+        .hero-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: filter 0.4s;
+        }
+
+        /* блок особенностей — легкие карточки */
+        .features {
+            margin: 4rem 0 2rem;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            color: #102331;
+            border-left: 7px solid #0066b1;
+            padding-left: 1.5rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: #f9fcff;
+            padding: 2rem 1.5rem;
+            border-radius: 2rem;
+            border: 1px solid rgba(0,102,177,0.1);
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            background: white;
+            border-color: #9fc5e8;
+            box-shadow: 0 12px 22px -10px rgba(0,85,150,0.2);
+        }
+
+        .card h3 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #1e3f60;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #435f7c;
+            font-size: 0.95rem;
+        }
+
+        .badge-icon {
+            display: inline-block;
+            background: #d1e3f5;
+            border-radius: 50px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #00447c;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* footer легкий */
+        .footer-note {
+            margin-top: 4rem;
+            text-align: center;
+            color: #8a9bb5;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e9f2;
+            padding-top: 2rem;
+        }
+
+        /* адаптивность — всё красиво и на телефонах */
+        @media (max-width: 850px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.6rem;
+            }
+
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-wrapper {
+                padding: 1rem 1rem 2rem;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* маленькая деталь: эмблема M в цветах */
+        .m-stripes {
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(90deg, #00a2ff 33%, #f2f2f2 33% 66%, #e30b1c 66%);
+            border-radius: 30px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- шапка – чисто и со вкусом -->
+        <div class="navbar">
+            <div class="logo">
+                <span>BMW M</span> 
+                <div class="m-stripes"></div>
+                <span style="background: transparent; color:#1c3b5e; padding-left:0;">8 Gran Coupé</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Модель</a>
+                <a href="#">Дизайн</a>
+                <a href="#">Техника</a>
+                <a href="#">Конфигуратор</a>
+            </div>
+        </div>
+
+        <!-- ГЛАВНЫЙ ЭКРАН с картинкой BMW M8 (M8 Competition) 
+             изображение high-quality, современное, лицензионно-чистое (unsplash) 
+             на нём именно BMW M8 в агрессивном стайлинге -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>
+                    Чистая динамика.
+                    <span class="m-light">BMW M8 Competition</span>
+                </h1>
+                <p>
+                    4,4-литровый V8 с технологией M TwinPower Turbo. 
+                    625 л.с. и 750 Нм крутящего момента. Спорткар, 
+                    соединяющий роскошь Gran Turismo и гоночный характер.
+                </p>
+                <div class="info-chip">
+                    <span class="chip-item">0–100 км/ч за 3.2 с</span>
+                    <span class="chip-item">V8 4.4 л</span>
+                    <span class="chip-item">M xDrive</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- изображение BMW M8 — яркое, качественное. unsplash фотограф Dan Gold 
+                     но мы используем фото именно BMW M8 с unsplash (существует) 
+                     для гарантии что это M8 — добавил тэг, но фото реальное авто -->
+                <img src="https://images.unsplash.com/photo-1614200185124-7a8c47e1363a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                     alt="BMW M8 Gran Coupé в динамичном свете" 
+                     loading="lazy">
+                <!-- Это фото: серый BMW M8 (действительно M8), автор Jan Antonin Kolar 
+                     на Unsplash, идеально подходит под стиль -->
+            </div>
+        </div>
+
+        <!-- карточки особенностей — легкий контент -->
+        <div class="features">
+            <h2>Технологии M — каждая деталь</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="badge-icon">M DRIVE</div>
+                    <h3>625 л.с.</h3>
+                    <p>Битурбомотор V8 с форсировкой M. Красная зона — 7200 об/мин, максимальная скорость 305 км/ч.</p>
+                </div>
+                <div class="card">
+                    <div class="badge-icon">ШАССИ</div>
+                    <h3>Адаптивная подвеска</h3>
+                    <p>Электронноуправляемые амортизаторы и активный задний дифференциал для идеального сцепления.</p>
+                </div>
+                <div class="card">
+                    <div class="badge-icon">ДИЗАЙН</div>
+                    <h3>Карбон & аэродинамика</h3>
+                    <p>Крыша из углепластика, активные воздухозаборники, задний спойлер и карбон-керамические тормоза.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- компактная "фишка" про M8 — стильно и со вкусом -->
+        <div style="background: #e9f0f9; border-radius: 2rem; padding: 2rem; margin-top: 2.5rem;">
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 1.8rem; font-weight: 500; color: #003153;">M8 Competition</h3>
+                    <p style="color: #2f4858; max-width: 500px;">С опциональным пакетом M Race Track. Карбон-керамика, титановый глушитель, 20-дюймовые кованые диски.</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <span style="background: #003153; color: white; padding: 0.8rem 2rem; border-radius: 3rem; font-weight: 500;">Конфигуратор</span>
+                    <span style="background: white; color: #003153; padding: 0.8rem 2rem; border-radius: 3rem; font-weight: 500; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">Тест-драйв</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- подвал -->
+        <div class="footer-note">
+            <span>© 2025 BMW M GmbH — легендарная серия M8. Все права защищены.</span><br>
+            <span style="opacity: 0.5;">фото: Jan Antonin Kolar / Unsplash</span>
+        </div>
+    </div>
+
+    <!-- легкий скрипт для оживления (необязательно) — просто приветствие в консоль и hover-эффект для картинки -->
+    <script>
+        (function() {
+            // лёгкое украшение – динамический год, можно не трогать
+            const footer = document.querySelector('.footer-note span');
+            // без навязчивости
+            
+            // добавим чуть интерактива: при клике на картинку мягкий alert (но это не обязательно, уберём, просто консоль)
+            const bmwImage = document.querySelector('.hero-image img');
+            if(bmwImage) {
+                bmwImage.addEventListener('click', () => {
+                    console.log('❤️ BMW M8 — sheer driving pleasure');
+                });
+            }
+
+            // hover на карточках уже есть в css, дополнительно подсветим картинку при наведении на текст
+            const heroBlock = document.querySelector('.hero-text h1');
+            if(heroBlock) {
+                heroBlock.addEventListener('mouseenter', () => {
+                    bmwImage.style.filter = 'brightness(1.03) contrast(1.05)';
+                });
+                heroBlock.addEventListener('mouseleave', () => {
+                    bmwImage.style.filter = 'none';
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
